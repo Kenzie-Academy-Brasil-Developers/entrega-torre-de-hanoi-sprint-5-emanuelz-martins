@@ -1,64 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
-</head>
-<body>
-    <header>
-        <!-- espaço para instruções e regras do jogo -->
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./styles/reset.css">
+        <link rel="stylesheet" href="./styles/style.css">
+        <title>Document</title>
+    </head>
+    <body>
+        <header>
+            <!-- espaço para instruções e regras do jogo -->
 
-    </header>
-    <main>
-        <section id="secaoTodasAsTorres"> 
-            <!-- torre de ínicio -->
-            <section class="secaoTorres secaoTorreUm">
-                <div class="desenhoTorre">
-                    <div id="torreUm" class="haste"></div>
-                    <div id="discoteste"></div>
-                    <div id="discoteste3"></div>
-                </div>
-                <div class="tituloTorre">
-                    <h3>Início</h3>
-                </div>
+        </header>
+        <main>
+            <section id="secaoTodasAsTorres"> 
+                <!-- torre de ínicio -->
+                <section class="secaoTorres secaoTorreUm">
+                    <div class="desenhoTorre">
+                        <div id="torreUm" class="haste"></div>
+                        <div id="discoteste"></div>
+                        <div id="discoteste3"></div>
+                    </div>
+                    <div class="tituloTorre">
+                        <h3>Início</h3>
+                    </div>
+                </section>
+
+                <!-- torre do meio -->
+                <section class="secaoTorres secaoTorreDois">
+                    <div class="desenhoTorre">
+                        <div id="torreDois" class="haste"></div>
+                        <div id="discoteste2"></div>
+                    </div>
+                    <div class="tituloTorre">
+                        <h3>Deslocamento</h3>
+                    </div>
+                </section>
+
+                <!-- torre do fim -->
+                <section class="secaoTorres secaoTorreTres">
+                    <div class="desenhoTorre">
+                        <div id="torreTres" class="haste"></div>
+                        
+                    </div>
+                    <div class="tituloTorre">
+                        <h3>Fim</h3>
+                    </div>
+                </section>
             </section>
-
-            <!-- torre do meio -->
-            <section class="secaoTorres secaoTorreDois">
-                <div class="desenhoTorre">
-                    <div id="torreDois" class="haste"></div>
-                    <div id="discoteste2"></div>
-                </div>
-                <div class="tituloTorre">
-                    <h3>Deslocamento</h3>
-                </div>
+            <section>
+                <!-- disco selecionado possibilidade de disco selecionado-->
             </section>
-
-            <!-- torre do fim -->
-            <section class="secaoTorres secaoTorreTres">
-                <div class="desenhoTorre">
-                    <div id="torreTres" class="haste"></div>
-                    
-                </div>
-                <div class="tituloTorre">
-                    <h3>Fim</h3>
-                </div>
+            <section>
+                <!-- anúncio vitória -->
             </section>
-
-
-        </section>
-        <section>
-            <!-- disco selecionado possibilidade de disco selecionado-->
-        </section>
-        <section>
-            <!-- anúncio vitória -->
-        </section>
-    </main>
-    <script href="">
-
-    </script>
-</body>
+        </main>
+        <script src="./src/scripts.js"></script>
+    </body>
 </html>
