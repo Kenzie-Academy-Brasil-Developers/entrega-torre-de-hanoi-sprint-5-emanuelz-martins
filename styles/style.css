@@ -1,57 +1,61 @@
-
 #secaoTodasAsTorres {
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
 }
 
 .secaoTorres {
-        margin-top: 80px; /*---teste---*/
-        display: flex; 
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-end;
-        box-sizing: border-box;
-        border: 1px solid indianred;
+  margin-top: 80px; /*---teste---*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  border: 1px solid indianred;
 }
+
 .desenhoTorre {
-    height: 150px;
-    display: flex;
-    flex-direction: column-reverse; 
-    align-items: center;
-    position: relative;
-    box-sizing: border-box;
+  height: 150px;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  position: relative;
+  box-sizing: border-box;
 }
 
 .haste {
-    width: 15px;
-    height: 100px;
-    background-color: black;
-    position: absolute;
-    bottom: 0px;
-    z-index: -1;
+  width: 15px;
+  height: 100px;
+  background-color: black;
+  position: absolute;
+  bottom: 0px;
+  z-index: -1;
 }
+
 #discoteste {
-    width: 60px;
-    height: 15px;
-    border-radius: 5px;
-    border: 1px solid gray;
-    background-color: indianred;
+  width: 60px;
+  height: 15px;
+  border-radius: 5px;
+  border: 1px solid gray;
+  background-color: indianred;
 }
+
 #discoteste2 {
-    width: 80px;
-    height: 15px;
-    border-radius: 5px;
-    border: 1px solid gray;
-    background-color: rgb(92, 205, 143);
+  width: 80px;
+  height: 15px;
+  border-radius: 5px;
+  border: 1px solid gray;
+  background-color: rgb(92, 205, 143);
 }
+
 #discoteste3 {
-    width: 40px;
-    height: 15px;
-    border-radius: 5px;
-    border: 1px solid gray;
-    background-color: rgb(92, 173, 205);
+  width: 40px;
+  height: 15px;
+  border-radius: 5px;
+  border: 1px solid gray;
+  background-color: rgb(92, 173, 205);
 }
+
 .tituloTorre {
-    padding: 15px 0;
+  padding: 15px 0;
 }
