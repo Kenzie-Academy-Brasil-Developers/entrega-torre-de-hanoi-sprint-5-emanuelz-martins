@@ -1,11 +1,11 @@
 
-#secaoTodasAsTorres {
+#secaoTorres {
     width: 100vw;
     display: flex;
     flex-direction: column;
 }
 
-.secaoTorres {
+.torre__area {
         margin-top: 80px; /*---teste---*/
         display: flex; 
         flex-direction: column;
@@ -14,7 +14,7 @@
         box-sizing: border-box;
         border: 1px solid indianred;
 }
-.desenhoTorre {
+.torre__area__pilha {
     height: 150px;
     display: flex;
     flex-direction: column-reverse; 
@@ -31,27 +31,28 @@
     bottom: 0px;
     z-index: -1;
 }
-#discoteste {
-    width: 60px;
+.discosTorre {
     height: 15px;
     border-radius: 5px;
     border: 1px solid gray;
+}
+#disco1 {
+    width: 40px;
     background-color: indianred;
 }
-#discoteste2 {
-    width: 80px;
-    height: 15px;
-    border-radius: 5px;
-    border: 1px solid gray;
+#disco2 {
+    width: 60px;
     background-color: rgb(92, 205, 143);
 }
-#discoteste3 {
-    width: 40px;
-    height: 15px;
-    border-radius: 5px;
-    border: 1px solid gray;
+#disco3 {
+    width: 80px;
     background-color: rgb(92, 173, 205);
 }
-.tituloTorre {
+#disco4 {
+    width: 100px;
+    background-color: rgb(224, 216, 100);
+}
+
+.torre__area__titulo {
     padding: 15px 0;
 }
