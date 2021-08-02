@@ -3,16 +3,18 @@
     width: 100vw;
     display: flex;
     flex-direction: column;
+    box-sizing: border-box;
 }
 
 .torre__area {
-        margin-top: 80px; /*---teste---*/
+        margin: 7px 15px; /*---teste---*/
         display: flex; 
         flex-direction: column;
         align-items: center;
         justify-content: flex-end;
         box-sizing: border-box;
-        border: 1px solid indianred;
+        border-radius: 4px;
+        background-color: rgba(219, 219, 219, 0.5);
 }
 .torre__area__pilha {
     height: 150px;
@@ -30,6 +32,7 @@
     position: absolute;
     bottom: 0px;
     z-index: -1;
+    border-radius: 3px;
 }
 .discosTorre {
     height: 15px;
