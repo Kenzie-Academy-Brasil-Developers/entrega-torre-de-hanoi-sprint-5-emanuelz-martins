@@ -26,11 +26,12 @@ for (let index = 0; index < torreSecao.length; index++) {
         } else {
             colocarDisco(evento);
         }
-
+        
         if(torreFinal.childElementCount === 5) {
             mostrarMensagemVitoria();
         }
     });
+
 }
 
 function selecionaDisco(evento) {
@@ -61,7 +62,7 @@ function colocarDisco(evento) {
             mostrarMensagemErro();
             setTimeout(() => {
                 mensagem.innerText = '';
-            }, 1000);
+            }, 1300);
         }
     }
 }
