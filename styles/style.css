@@ -1,61 +1,60 @@
-
 #secaoTorres {
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
 }
 
 .torre__area {
-        margin: 7px 15px; /*---teste---*/
-        display: flex; 
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-end;
-        box-sizing: border-box;
-        border-radius: 4px;
-        background-color: rgba(219, 219, 219, 0.5);
+  margin: 7px 15px; /*---teste---*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  border-radius: 4px;
+  background-color: rgba(219, 219, 219, 0.5);
 }
 .torre__area__pilha {
-    height: 150px;
-    display: flex;
-    flex-direction: column-reverse; 
-    align-items: center;
-    position: relative;
-    box-sizing: border-box;
+  height: 150px;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  position: relative;
+  box-sizing: border-box;
 }
 
 .haste {
-    width: 15px;
-    height: 100px;
-    background-color: black;
-    position: absolute;
-    bottom: 0px;
-    z-index: -1;
-    border-radius: 3px;
+  width: 15px;
+  height: 100px;
+  background-color: black;
+  position: absolute;
+  bottom: 0px;
+  z-index: -1;
+  border-radius: 3px;
 }
 .discosTorre {
-    height: 15px;
-    border-radius: 5px;
-    border: 1px solid gray;
+  height: 15px;
+  border-radius: 5px;
+  border: 1px solid gray;
 }
 #disco1 {
-    width: 40px;
-    background-color: indianred;
+  width: 40px;
+  background-color: indianred;
 }
 #disco2 {
-    width: 60px;
-    background-color: rgb(92, 205, 143);
+  width: 60px;
+  background-color: rgb(92, 205, 143);
 }
 #disco3 {
-    width: 80px;
-    background-color: rgb(92, 173, 205);
+  width: 80px;
+  background-color: rgb(92, 173, 205);
 }
 #disco4 {
-    width: 100px;
-    background-color: rgb(224, 216, 100);
+  width: 100px;
+  background-color: rgb(224, 216, 100);
 }
 
 .torre__area__titulo {
-    padding: 15px 0;
+  padding: 15px 0;
 }

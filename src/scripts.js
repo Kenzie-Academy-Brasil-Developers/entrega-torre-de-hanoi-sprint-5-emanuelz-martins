@@ -1,55 +1,82 @@
-const torrePilhaUM = document.getElementById("torre__pilha--um")
-// console.log(torrePilhaUM)
+const torrePilhaUm = document.getElementById("torre__pilha--um");
+const torreFinal = document.querySelector('#torre__pilha--tres');
+const torreSecao = document.querySelectorAll(".torre__area");
+let modoDoDiscoAtual = false;
+let discoSelecionado;
+
+criarDiscos();
 
 function criarDiscos() {
-    for(let i=4; i>0; i--){
+    for (let i = 4; i > 0; i--) {
         let numero = i;
         let stringId = "disco" + numero;
         let disco = document.createElement("div");
         disco.id = stringId;
         disco.setAttribute("class", "discosTorre");
-        // console.log(disco)
-        torrePilhaUM.appendChild(disco);
-
+        torrePilhaUm.appendChild(disco);
     }
 }
-criarDiscos()
 
 //------------SELECIONAR DISCO-------------------//
-
-
-const torreSecao = document.querySelectorAll(".torre__area")
-for(let index=0; index<torreSecao.length;index++){
-    torreSecao[index].addEventListener("click", selecionaDisco)
+for (let index = 0; index < torreSecao.length; index++) {
+    torreSecao[index].addEventListener("click", (evento) => {
+        if(modoDoDiscoAtual === false) {
+            selecionaDisco(evento);
+        } else {
+            colocarDisco(discoSelecionado);
+        }
+    });
 }
 
-function selecionaDisco(e){
-    let torreAreaPilha = e.currentTarget.childNodes[1];
-    console.dir(torreAreaPilha)
-    let selecionado = torreAreaPilha.lastChild
-    torreAreaPilha.removeChild(selecionado)
+function selecionaDisco(evento) {
+    let torreAreaPilha = evento.currentTarget.childNodes[1];
+    let selecionado = torreAreaPilha.lastChild;
+    console.dir({ torreAreaPilha, torreAreaPilha, evento});
+    if (selecionado.className === 'discosTorre') {
+        torreAreaPilha.removeChild(selecionado);
+    }
+    discoSelecionado = selecionado;
+    modoDoDiscoAtual = true;
+    return selecionado;
+}
 
+function colocarDisco(disco) {
+    for (let i = 0; i < torreSecao.length; i++) {
+        torreSecao[i].addEventListener('click', () => {
+            torreSecao[i].appendChild(disco);
+        });
+    }
+}
+
+function checarSeForUmaTorre() {
 
 }
 
+function checarVitoria() {
+    if (torreFinal.childElementCount === 4) {
+        const mensagemVitoria = document.querySelector('#msg-vitoria');
+        const newDiv = document.createElement('div');
 
+        newDiv.className = 'caixa-de-vitoria';
+        newDiv.innerText = 'Parabéns!!! Você venceu!';
+        mensagemVitoria.appendChild(newDiv);
+    }
+}
 
+function sobrepor(selecaoPaiDiscos, discoSelecionado) {
+    let ultimoDisco = selecaoPaiDiscos.lastChild;
+    let idDisco1 = ultimoDisco.idDisco1;
+    let numero1 = idDisco1[idDisco1.length - 1];
+    let idDisco2 = discoSelecionado.id;
+    let numero2 = idDisco2[idDisco2.length - 1];
 
-//-------------a = selecao pai dos discos(área clicada) // b= disco selecionado
-
-function sobrepor(a, b) {
-    let ultimoDisco = a.lastChild;
-    let id1 = ultimoDisco.id1
-    let numero1= id1[id1.length-1]
-    let id2 = b.id
-    let numero2 = id2[id2.length-1]
-
-    if(numero2 < numero1){
-        return true
+    if (numero2 < numero1) {
+        return true;
     }
 
-    if(ultimoDisco === null){
-        return true
+    if (ultimoDisco === null) {
+        return true;
+    } else {
+        return false;
     }
-    else { return false}
 }
