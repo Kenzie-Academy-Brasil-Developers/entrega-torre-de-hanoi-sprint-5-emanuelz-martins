@@ -1,7 +1,8 @@
 const torrePilhaUm = document.getElementById("torre__pilha--um");
 const torreFinal = document.querySelector('#torre__pilha--tres');
 const torreSecao = document.querySelectorAll(".torre__area");
-let modoDoDiscoAtual = false;
+const mensagem = document.querySelector('#msg');
+let modoAtualDoDisco = false;
 let discoSelecionado;
 
 criarDiscos();
@@ -20,10 +21,14 @@ function criarDiscos() {
 //------------SELECIONAR DISCO-------------------//
 for (let index = 0; index < torreSecao.length; index++) {
     torreSecao[index].addEventListener("click", (evento) => {
-        if(modoDoDiscoAtual === false) {
+        if (modoAtualDoDisco === false) {
             selecionaDisco(evento);
         } else {
             colocarDisco(evento);
+        }
+
+        if(torreFinal.childElementCount === 5) {
+            mostrarMensagemVitoria();
         }
     });
 }
@@ -37,50 +42,51 @@ function selecionaDisco(evento) {
     if (selecionado.className === 'discosTorre') {
         torreAreaPilha.removeChild(selecionado);
         discoSelecionado = selecionado;
-        modoDoDiscoAtual = true;
+        modoAtualDoDisco = true;
     }
 }
 
 function colocarDisco(evento) {
-
     let torreAreaPilha = evento.currentTarget.childNodes[1]
     let discoPresente = torreAreaPilha.lastChild;
-    // console.dir(torreAreaPilha);
-    // console.log(torreAreaPilha.childElementCount);
 
-    if(torreAreaPilha.childElementCount === 1){
+    if (torreAreaPilha.childElementCount === 1) {
         torreAreaPilha.appendChild(discoSelecionado);
-        modoDoDiscoAtual = false;
+        modoAtualDoDisco = false;
     } else {
-        if(sobrepor(discoPresente, discoSelecionado)){
-        torreAreaPilha.appendChild(discoSelecionado) 
-        modoDoDiscoAtual = false
-        }
-        else{ alert("Escolha um cone que tenha um disco maior embaixo.")
+        if (sobrepor(discoPresente, discoSelecionado)) {
+            torreAreaPilha.appendChild(discoSelecionado)
+            modoAtualDoDisco = false
+        } else {
+            mostrarMensagemErro();
+            setTimeout(() => {
+                mensagem.innerText = '';
+            }, 1000);
         }
     }
-
 }
 
-function checarSeForUmaTorre() {
+function mostrarMensagemVitoria() {
+    const novaDiv = document.createElement('div');
 
+    novaDiv.className = 'caixa-de-vitoria';
+    novaDiv.innerText = 'Parabéns!!! Você venceu!';
+    mensagem.appendChild(novaDiv);
 }
 
-function checarVitoria() {
-    if (torreFinal.childElementCount === 4) {
-        const mensagemVitoria = document.querySelector('#msg-vitoria');
-        const newDiv = document.createElement('div');
+function mostrarMensagemErro() {
+    const novoSpan = document.createElement('span');
 
-        newDiv.className = 'caixa-de-vitoria';
-        newDiv.innerText = 'Parabéns!!! Você venceu!';
-        mensagemVitoria.appendChild(newDiv);
-    }
+    novoSpan.className = 'mensagem-erro-tamanho';
+    novoSpan.innerText = 'Não é possível sobrepor uma peça maior que a anterior!!';
+    novoSpan.style.color = 'red';
+    mensagem.appendChild(novoSpan);
 }
 
 function sobrepor(discoPresente, discoSelecionado) {
     let numero1 = discoPresente.id;
     let numero2 = discoSelecionado.id;
-   
+
     if (numero1 > numero2) {
         return true;
     } else {
