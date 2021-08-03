@@ -30,6 +30,9 @@ for (let index = 0; index < torreSecao.length; index++) {
         
         if(torreFinal.childElementCount === 5) {
             mostrarMensagemVitoria();
+            setTimeout(() => {
+                mensagem.innerText = '';
+            }, 10000);
         }
     });
 
@@ -90,6 +93,7 @@ function mostrarMensagemVitoria() {
 
     novaDiv.className = 'caixa-de-vitoria';
     novaDiv.innerText = 'Parabéns!!! Você venceu!';
+    novaDiv.style.color = 'gold';
     mensagem.appendChild(novaDiv);
 }
 

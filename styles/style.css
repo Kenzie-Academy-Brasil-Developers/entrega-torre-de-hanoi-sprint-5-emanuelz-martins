@@ -1,3 +1,19 @@
+html,
+body,
+main,
+section {
+  font-family: "Raleway", "Helvetica", sans-serif;
+}
+
+:root {
+  --gray-color: rgba(219, 219, 219, 0.5);
+  --black-color: #000000;
+  --pink-pastel-color: indianred;
+  --light-green-color: rgb(92, 205, 143);
+  --light-blue-color: rgb(92, 173, 205);
+  --yellow-color: rgb(224, 216, 100);
+}
+
 .caixa__selecao {
   width: 150px;
   height: 150px;
@@ -7,27 +23,27 @@
   align-items: center;
   justify-content: flex-end;
   box-sizing: border-box;
-  border: 2px double rgba(219, 219, 219, 0.5);
+  border: 2px double var(--gray-color);
 }
 
 .discosTorre--um {
   width: 40px;
-  background-color: rgba(219, 219, 219, 0.5);
+  background-color: var(--gray-color);
 }
 
 .discosTorre--dois {
   width: 60px;
-  background-color: rgba(219, 219, 219, 0.5);
+  background-color: var(--gray-color);
 }
 
 .discosTorre--tres {
   width: 80px;
-  background-color: rgba(219, 219, 219, 0.5);
+  background-color: var(--gray-color);
 }
 
 .discosTorre--quatro {
   width: 100px;
-  background-color: rgba(219, 219, 219, 0.5);
+  background-color: var(--gray-color);
 }
 
 #secaoTorres {
@@ -45,7 +61,8 @@
   justify-content: flex-end;
   box-sizing: border-box;
   border-radius: 4px;
-  background-color: rgba(219, 219, 219, 0.5);
+  background-color: var(--gray-color);
+  border: 1px solid var(--black-color);
 }
 
 .torre__area__pilha {
@@ -60,7 +77,7 @@
 .haste {
   width: 15px;
   height: 100px;
-  background-color: black;
+  background-color: var(--black-color);
   position: absolute;
   bottom: 0px;
   z-index: -1;
@@ -70,39 +87,44 @@
 .discosTorre {
   height: 15px;
   border-radius: 5px;
-  border: 1px solid gray;
+  border: 1px solid var(--gray-color);
 }
 
 #disco1 {
   width: 40px;
-  background-color: indianred;
+  background-color: var(--pink-pastel-color);
 }
 
 #disco2 {
   width: 60px;
-  background-color: rgb(92, 205, 143);
+  background-color: var(--light-green-color);
 }
 
 #disco3 {
   width: 80px;
-  background-color: rgb(92, 173, 205);
+  background-color: var(--light-blue-color);
 }
 
 #disco4 {
   width: 100px;
-  background-color: rgb(224, 216, 100);
+  background-color: var(--yellow-color);
 }
 
 .torre__area__titulo {
   padding: 15px 0;
 }
 
+#msg {
+  text-align: center;
+  margin: 15px;
+}
+
 @media (min-width: 769px) {
   #secaoTorres {
-    width: 100vw;
-    display: flex;
     flex-direction: row;
+    justify-content: center;
   }
+
   .torre__area {
     margin: 7px 15px;
     width: 200px;
