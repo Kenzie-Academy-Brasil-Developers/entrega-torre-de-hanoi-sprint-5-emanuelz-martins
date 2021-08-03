@@ -1,6 +1,7 @@
 const torrePilhaUm = document.getElementById("torre__pilha--um");
 const torreFinal = document.querySelector('#torre__pilha--tres');
 const torreSecao = document.querySelectorAll(".torre__area");
+const discosDeVisualização = document.querySelectorAll(".caixa__selecao > .discosTorre")
 let modoDoDiscoAtual = false;
 let discoSelecionado;
 
@@ -27,19 +28,37 @@ for (let index = 0; index < torreSecao.length; index++) {
         }
     });
 }
+function mostrarSelecao(x){
+    let cores = ["disco1", "disco2", "disco3", "disco4"];
+    
+    // console.log(discosSelecao)
+    for(let i=0; i<cores.length; i++){
+        if(x.id === cores[i]){
+            discosDeVisualização[i].id = cores[i];
+        }
+    }
+}
+
 
 function selecionaDisco(evento) {
     let torreAreaPilha = evento.currentTarget.childNodes[1];
     let selecionado = torreAreaPilha.lastChild;
-    console.dir(torreAreaPilha);
-    console.log(torreAreaPilha);
+    // console.dir(torreAreaPilha);
+    // console.log(torreAreaPilha);
 
     if (selecionado.className === 'discosTorre') {
         torreAreaPilha.removeChild(selecionado);
         discoSelecionado = selecionado;
         modoDoDiscoAtual = true;
+        mostrarSelecao(discoSelecionado);
     }
 }
+function tirarSelecao(x){
+    for(let i=0; i<discosDeVisualização.length;i++){
+        discosDeVisualização[i].removeAttribute("id")
+    }
+}
+
 
 function colocarDisco(evento) {
 
@@ -51,10 +70,13 @@ function colocarDisco(evento) {
     if(torreAreaPilha.childElementCount === 1){
         torreAreaPilha.appendChild(discoSelecionado);
         modoDoDiscoAtual = false;
+        tirarSelecao(discoSelecionado);
     } else {
         if(sobrepor(discoPresente, discoSelecionado)){
         torreAreaPilha.appendChild(discoSelecionado) 
         modoDoDiscoAtual = false
+        tirarSelecao(discoSelecionado);
+
         }
         else{ alert("Escolha um cone que tenha um disco maior embaixo.")
         }
@@ -62,9 +84,6 @@ function colocarDisco(evento) {
 
 }
 
-function checarSeForUmaTorre() {
-
-}
 
 function checarVitoria() {
     if (torreFinal.childElementCount === 4) {
