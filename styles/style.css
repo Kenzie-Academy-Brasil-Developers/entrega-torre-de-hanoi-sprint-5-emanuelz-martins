@@ -1,3 +1,10 @@
+body{
+  background-image: url(/src/imgs/background.png);
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: auto;
+}
+
 .caixa__selecao {
   width: 150px;
   height: 150px;
