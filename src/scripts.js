@@ -6,7 +6,7 @@ const discosDeVisualização = document.querySelectorAll(".caixa__selecao > .dis
 let modoAtualDoDisco = false;
 let discoSelecionado;
 
-criarDiscos(6);
+criarDiscos();
 console.log(getNome);
 console.log(getDificuldade);
 
