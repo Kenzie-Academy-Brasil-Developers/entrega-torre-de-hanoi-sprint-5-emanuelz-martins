@@ -15,17 +15,14 @@ section {
 }
 
 body{
-  /* background-image: url(/src/imgs/background.png); */
+  background-image: url(/src/imgs/background.png);
   background-repeat: no-repeat;
   background-position: top;
   background-size: auto;
+  background-color: #590202;
 }
 .hidden {
   display: none;
-}
-
-.show {
-  display: block;
 }
 
 .instrucoes {
@@ -65,7 +62,7 @@ body{
   cursor: pointer;
 }
 
-.caixa__selecao {
+#caixa__selecao {
   width: 150px;
   height: 300px;
   position: relative;
@@ -73,37 +70,28 @@ body{
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* box-sizing: border-box; */
+  box-sizing: border-box;
   border: 2px double rgba(219, 219, 219, 0.5);
+  background-color: #F29C50 ;
 }
 
-/* .discosTorre--um img{
 
-}
-
-.discosTorre--dois {
-
-}
-
-.discosTorre--tres {
-
-}
-
-.discosTorre--quatro {
-
-}
-.discosTorre--cinco {
-
-}
-.discosTorre--seis {
-
-} */
-.caixa__selecao .discosTorre img{
+#caixa__selecao .discosTorreSelecao {
   width:80px;
   filter:opacity(30%);
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
   
 }
 
+#disco1Selecao, #disco2Selecao, #disco3Selecao, #disco4Selecao, #disco5Selecao, #disco6Selecao {
+  filter: opacity(100%);
+}
+
+#caixa__selecao .discosTorre img{
+  width: 100%;
+}
 #secaoTorres {
   max-width: 100vw;
   display: flex;
@@ -152,36 +140,61 @@ body{
   width: 100px;
   filter:opacity(100%);
   position: absolute;
+  left: 50%;
+  top: 35%;
+  transform: translateX(-50%);
+
 }
 
 #disco2 img{
   width: 100px;
   filter:opacity(100%);
   position: absolute;
+  left: 50%;
+  top: 48%;
+  transform: translateX(-50%);
+
 }
 
 #disco3 img{
   width: 100px;
   filter:opacity(100%);
   position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%);
+
 }
 
 #disco4 img{
   width: 100px;
   filter:opacity(100%);
   position: absolute;
+  left: 50%;
+  top: 55%;
+  transform: translateX(-50%);
+
 }
 
 #disco5 img{
   width: 100px;
   filter:opacity(100%);
   position: absolute;
+  left: 50%;
+  top: 58%;
+  transform: translateX(-50%);
+
 }
 
 #disco6 img{
   width: 100px;
   filter:opacity(100%);
   position: absolute;
+  left: 50%;
+  top: 64%;
+  transform: translateX(-50%);
+
+
 }
 
 .torre__area__titulo {
