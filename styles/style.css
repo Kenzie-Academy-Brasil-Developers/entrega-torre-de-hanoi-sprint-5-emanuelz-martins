@@ -87,29 +87,37 @@ body{
   /* border: 1px solid gray; */
 /* } */ 
 
-#disco1 {
-  width: 40px;
-  background-color: indianred;
-  filter:opacity(100%);
-}
-
-#disco2 {
-  width: 60px;
-  background-color: rgb(92, 205, 143);
-  filter:opacity(100%);
-
-}
-
-#disco3 {
-  width: 80px;
-  background-color: rgb(92, 173, 205);
-  filter:opacity(100%);
-
-}
-
-#disco4 {
+#disco1 img{
   width: 100px;
-  background-color: rgb(224, 216, 100);
+  filter:opacity(100%);
+}
+
+#disco2 img{
+  width: 100px;
+  filter:opacity(100%);
+
+}
+
+#disco3 img{
+  width: 100px;
+  filter:opacity(100%);
+
+}
+
+#disco4 img{
+  width: 100px;
+  filter:opacity(100%);
+
+}
+
+#disco5 img{
+  width: 100px;
+  filter:opacity(100%);
+
+}
+
+#disco6 img{
+  width: 100px;
   filter:opacity(100%);
 
 }

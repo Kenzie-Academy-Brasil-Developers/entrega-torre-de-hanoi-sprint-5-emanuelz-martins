@@ -9,13 +9,21 @@ let discoSelecionado;
 criarDiscos();
 
 function criarDiscos() {
-    for (let i = 4; i > 0; i--) {
-        let numero = i;
+    const imagens= ["src/imgs/paotopo.png", "src/imgs/ovo.png", "src/imgs/salada.png", "src/imgs/queijo.png", "src/imgs/carne.png", "src/imgs/paobase.png"];
+    for (let i = 4; i >= 0; i--) {
+        let numero = i+1;
         let stringId = "disco" + numero;
         let disco = document.createElement("div");
+        let figure = document.createElement("figure")
+        let img = document.createElement("img")
+        img.setAttribute("src", imagens[i]);
+        img.setAttribute("alt", "imagem de parte do hamburguer valor "+ i);
         disco.id = stringId;
         disco.setAttribute("class", "discosTorre");
+        figure.appendChild(img);
+        disco.appendChild(figure);
         torrePilhaUm.appendChild(disco);
+
     }
 }
 
