@@ -1,14 +1,13 @@
+const torrePilhaSelecao = document.getElementById("torre__pilha--selecao");
 const torrePilhaUm = document.getElementById("torre__pilha--um");
 const torreFinal = document.querySelector('#torre__pilha--tres');
 const torreSecao = document.querySelectorAll(".torre__area");
 const mensagem = document.querySelector('#msg');
-const discosDeVisualização = document.querySelectorAll(".caixa__selecao > .discosTorre");
+const discosDeVisualizacao = document.querySelectorAll("#caixa__selecao > .discosTorre");
 let modoAtualDoDisco = false;
 let discoSelecionado;
 
-criarDiscos();
-console.log(getNome);
-console.log(getDificuldade);
+criarDiscos(getDificuldade());
 
 function montarHamburguer(dificuldade, imagens){
     for (let i = dificuldade; i > 0; i--) {
@@ -26,18 +25,38 @@ function montarHamburguer(dificuldade, imagens){
         torrePilhaUm.appendChild(disco);
     }
 }
+function montarHamburguerSelecionado(dificuldade, imagens){
+    for (let i = dificuldade; i > 0; i--) {
+        let numero = i;
+        let stringId = "discoSelecionado" + numero;
+        let disco = document.createElement("div");
+        let figure = document.createElement("figure")
+        let img = document.createElement("img")
+        img.setAttribute("src", imagens[i-1]);
+        img.setAttribute("alt", "imagem de parte do hamburguer valor "+ i);
+        disco.id = stringId;
+        disco.setAttribute("class", "discosTorre");
+        figure.appendChild(img);
+        disco.appendChild(figure);
+        torrePilhaSelecao.appendChild(disco);
+    }
+}
 function criarDiscos(dificuldade) {
     if(dificuldade === 4){
         const imagens = ["src/imgs/paotopo.png", "src/imgs/queijo.png", "src/imgs/carne.png", "src/imgs/paobase.png"];
-        return montarHamburguer(dificuldade, imagens)
+        montarHamburguer(dificuldade, imagens)
+        montarHamburguerSelecionado(dificuldade, imagens)
+
     }
     else if(dificuldade === 5){
         const imagens = ["src/imgs/paotopo.png","src/imgs/salada.png", "src/imgs/queijo.png", "src/imgs/carne.png", "src/imgs/paobase.png"];
-        return montarHamburguer(dificuldade, imagens)
+        montarHamburguer(dificuldade, imagens)
+        montarHamburguerSelecionado(dificuldade, imagens)
     }
     else if(dificuldade === 6){
         const imagens = ["src/imgs/paotopo.png","src/imgs/ovo.png","src/imgs/salada.png", "src/imgs/queijo.png", "src/imgs/carne.png", "src/imgs/paobase.png"];
         montarHamburguer(dificuldade, imagens)
+        montarHamburguerSelecionado(dificuldade, imagens)
     }
 }
 
@@ -58,12 +77,13 @@ for (let index = 0; index < torreSecao.length; index++) {
         }
     });
 }
-function mostrarSelecao(x){
+function mostrarSelecao(discoSelecionado) {
     let cores = ["disco1", "disco2", "disco3", "disco4", "disco5", "disco6"];
-    
-    for(let i=0; i<cores.length; i++){
-        if(x.id === cores[i]){
-            discosDeVisualização[i].id = cores[i];
+    let cores2 = ["disco1Selecao", "disco2Selecao", "disco3Selecao", "disco4Selecao", "disco5Selecao", "disco6Selecao"];
+
+    for (let i = 0; i < cores.length; i++) {
+        if (discoSelecionado.id === cores[i]) {
+            discosDeVisualizacao[i].id = cores2[i];
         }
     }
 }
@@ -81,8 +101,8 @@ function selecionaDisco(evento) {
 }
 
 function tirarSelecao(x) {
-    for (let i = 0; i < discosDeVisualização.length; i++) {
-        discosDeVisualização[i].removeAttribute("id");
+    for (let i = 0; i < discosDeVisualizacao.length; i++) {
+        discosDeVisualizacao[i].removeAttribute("id");
     }
 }
 
