@@ -6,29 +6,38 @@ const discosDeVisualização = document.querySelectorAll(".caixa__selecao > .dis
 let modoAtualDoDisco = false;
 let discoSelecionado;
 
-criarDiscos();
+criarDiscos(6);
 console.log(getNome);
 console.log(getDificuldade);
 
+function montarHamburguer(dificuldade, imagens){
+    for (let i = dificuldade; i > 0; i--) {
+        let numero = i;
+        let stringId = "disco" + numero;
+        let disco = document.createElement("div");
+        let figure = document.createElement("figure")
+        let img = document.createElement("img")
+        img.setAttribute("src", imagens[i-1]);
+        img.setAttribute("alt", "imagem de parte do hamburguer valor "+ i);
+        disco.id = stringId;
+        disco.setAttribute("class", "discosTorre");
+        figure.appendChild(img);
+        disco.appendChild(figure);
+        torrePilhaUm.appendChild(disco);
+    }
+}
 function criarDiscos(dificuldade) {
-    const imagens = ["src/imgs/paotopo.png", "src/imgs/ovo.png", "src/imgs/salada.png", "src/imgs/queijo.png", "src/imgs/carne.png", "src/imgs/paobase.png"];
-    const hamburguer = []
     if(dificuldade === 4){
-        for (let i = 4; i >= 0; i--) {
-            let numero = i+1;
-            let stringId = "disco" + numero;
-            let disco = document.createElement("div");
-            let figure = document.createElement("figure")
-            let img = document.createElement("img")
-            img.setAttribute("src", imagens[i]);
-            img.setAttribute("alt", "imagem de parte do hamburguer valor "+ i);
-            disco.id = stringId;
-            disco.setAttribute("class", "discosTorre");
-            figure.appendChild(img);
-            disco.appendChild(figure);
-            torrePilhaUm.appendChild(disco);
-
-        }
+        const imagens = ["src/imgs/paotopo.png", "src/imgs/queijo.png", "src/imgs/carne.png", "src/imgs/paobase.png"];
+        return montarHamburguer(dificuldade, imagens)
+    }
+    else if(dificuldade === 5){
+        const imagens = ["src/imgs/paotopo.png","src/imgs/salada.png", "src/imgs/queijo.png", "src/imgs/carne.png", "src/imgs/paobase.png"];
+        return montarHamburguer(dificuldade, imagens)
+    }
+    else if(dificuldade === 6){
+        const imagens = ["src/imgs/paotopo.png","src/imgs/ovo.png","src/imgs/salada.png", "src/imgs/queijo.png", "src/imgs/carne.png", "src/imgs/paobase.png"];
+        montarHamburguer(dificuldade, imagens)
     }
 }
 
