@@ -1,5 +1,5 @@
 body{
-  background-image: url(/src/imgs/background.png);
+  /* background-image: url(/src/imgs/background.png); */
   background-repeat: no-repeat;
   background-position: top;
   background-size: auto;
@@ -7,34 +7,41 @@ body{
 
 .caixa__selecao {
   width: 150px;
-  height: 150px;
+  height: 300px;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-end;
-  box-sizing: border-box;
+  justify-content: center;
+  /* box-sizing: border-box; */
   border: 2px double rgba(219, 219, 219, 0.5);
 }
 
-.discosTorre--um {
-  width: 40px;
-  background-color: rgba(219, 219, 219, 0.5);
+/* .discosTorre--um img{
+
 }
 
 .discosTorre--dois {
-  width: 60px;
-  background-color: rgba(219, 219, 219, 0.5);
+
 }
 
 .discosTorre--tres {
-  width: 80px;
-  background-color: rgba(219, 219, 219, 0.5);
+
 }
 
 .discosTorre--quatro {
-  width: 100px;
-  background-color: rgba(219, 219, 219, 0.5);
+
+}
+.discosTorre--cinco {
+
+}
+.discosTorre--seis {
+
+} */
+.caixa__selecao .discosTorre img{
+  width:80px;
+  filter:opacity(30%);
+  
 }
 
 #secaoTorres {
@@ -63,7 +70,7 @@ body{
   position: relative;
   box-sizing: border-box;
 }
-
+/* 
 .haste {
   width: 15px;
   height: 100px;
@@ -72,32 +79,39 @@ body{
   bottom: 0px;
   z-index: -1;
   border-radius: 3px;
-}
+} */
 
-.discosTorre {
+/* .discosTorre {
   height: 15px;
   border-radius: 5px;
-  border: 1px solid gray;
-}
+  /* border: 1px solid gray; */
+/* } */ 
 
 #disco1 {
   width: 40px;
   background-color: indianred;
+  filter:opacity(100%);
 }
 
 #disco2 {
   width: 60px;
   background-color: rgb(92, 205, 143);
+  filter:opacity(100%);
+
 }
 
 #disco3 {
   width: 80px;
   background-color: rgb(92, 173, 205);
+  filter:opacity(100%);
+
 }
 
 #disco4 {
   width: 100px;
   background-color: rgb(224, 216, 100);
+  filter:opacity(100%);
+
 }
 
 .torre__area__titulo {
