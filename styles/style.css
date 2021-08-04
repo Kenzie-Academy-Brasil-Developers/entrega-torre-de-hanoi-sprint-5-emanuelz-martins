@@ -151,36 +151,37 @@ body{
 #disco1 img{
   width: 100px;
   filter:opacity(100%);
+  position: absolute;
 }
 
 #disco2 img{
   width: 100px;
   filter:opacity(100%);
-
+  position: absolute;
 }
 
 #disco3 img{
   width: 100px;
   filter:opacity(100%);
-
+  position: absolute;
 }
 
 #disco4 img{
   width: 100px;
   filter:opacity(100%);
-
+  position: absolute;
 }
 
 #disco5 img{
   width: 100px;
   filter:opacity(100%);
-
+  position: absolute;
 }
 
 #disco6 img{
   width: 100px;
   filter:opacity(100%);
-
+  position: absolute;
 }
 
 .torre__area__titulo {
