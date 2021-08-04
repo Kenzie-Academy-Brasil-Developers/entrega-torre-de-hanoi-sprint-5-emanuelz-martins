@@ -48,8 +48,22 @@
 
             </div>
         </header>
+
         <main>
-            <section id="secaoTorres"> 
+            <div id="instrucoes" class="instrucoes">
+                <h2 class="instrucoes__titulo"> INSTRUÇÕES </h2>
+                <p class="instrucoes__paragrafo"></p>
+                <input id="nome" class="instrucoes__entrada" type="text" placeholder="Nome">
+                <select id="dificuldade-select" class="instrucoes__select">
+                    <option value="4">Queijo-Burguer -- <b>Nível Iniciante</b></option>
+                    <option value="5">Queijo-Salada -- <b>Nível Intermediário</b></option>
+                    <option value="6">Queijo-Completo -- <b>Nivel Avançado</b></option>
+                </select>
+                <button id="instrucoes-aceitas" class="instrucoes__botao">OK</button>
+            </div>
+
+
+            <section id="secaoTorres" class="hidden"> 
                 <!-- torre de ínicio -->
                 <section class="torre__area area--um">
                     <div id="torre__pilha--um" class="torre__area__pilha">
@@ -80,7 +94,7 @@
             </section>
             <section id="msg"></section>
         </main>
-        <script src="./src/scripts.js">
-        </script>
+        <script src="./src/instrucoes.js"></script>
+        <script src="./src/scripts.js"></script>
     </body>
 </html>

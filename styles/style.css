@@ -1,8 +1,68 @@
+html,
+body,
+main,
+section {
+  font-family: "Raleway", "Helvetica", sans-serif;
+}
+
+:root {
+  --gray-color: rgba(219, 219, 219, 0.5);
+  --black-color: #000000;
+  --pink-pastel-color: indianred;
+  --light-green-color: rgb(92, 205, 143);
+  --light-blue-color: rgb(92, 173, 205);
+  --yellow-color: rgb(224, 216, 100);
+}
+
 body{
   /* background-image: url(/src/imgs/background.png); */
   background-repeat: no-repeat;
   background-position: top;
   background-size: auto;
+}
+.hidden {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.instrucoes {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: 80%;
+  padding: 15px;
+  margin: 0 auto;
+  background: var(--pink-pastel-color);
+  border: 1px solid var(--black-color);
+  border-radius: 5px;
+}
+
+.instrucoes__titulo, .instrucoes__paragrafo {
+  color: white;
+}
+
+.instrucoes__entrada, .instrucoes__select {
+  margin-top: 10px;
+}
+
+.instrucoes__select {
+  width: 35%;
+  cursor: pointer;
+}
+
+.instrucoes__botao {
+  width: 40%;
+  padding: 5px;
+  background: var(--light-blue-color);
+  margin-left: 155px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
 }
 
 .caixa__selecao {
@@ -59,7 +119,8 @@ body{
   justify-content: flex-end;
   box-sizing: border-box;
   border-radius: 4px;
-  background-color: rgba(219, 219, 219, 0.5);
+  background-color: var(--gray-color);
+  border: 1px solid var(--black-color);
 }
 
 .torre__area__pilha {
@@ -74,7 +135,7 @@ body{
 .haste {
   width: 15px;
   height: 100px;
-  background-color: black;
+  background-color: var(--black-color);
   position: absolute;
   bottom: 0px;
   z-index: -1;
@@ -126,12 +187,17 @@ body{
   padding: 15px 0;
 }
 
+#msg {
+  text-align: center;
+  margin: 15px;
+}
+
 @media (min-width: 769px) {
   #secaoTorres {
-    width: 100vw;
-    display: flex;
     flex-direction: row;
+    justify-content: center;
   }
+
   .torre__area {
     margin: 7px 15px;
     width: 200px;
