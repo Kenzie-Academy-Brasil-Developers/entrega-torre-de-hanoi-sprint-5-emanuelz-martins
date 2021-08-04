@@ -7,6 +7,8 @@ let modoAtualDoDisco = false;
 let discoSelecionado;
 
 criarDiscos();
+console.log(getNome);
+console.log(getDificuldade);
 
 function criarDiscos() {
     for (let i = 4; i > 0; i--) {

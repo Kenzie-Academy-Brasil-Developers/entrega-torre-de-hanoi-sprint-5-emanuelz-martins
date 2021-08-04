@@ -20,10 +20,18 @@
             </div>
         </header>
         <main>
-            <section id="instrucoes">
-                
-            </section>
-            <section id="secaoTorres"> 
+            <div id="instrucoes" class="instrucoes">
+                <h2 class="instrucoes__titulo"> INSTRUÇÕES </h2>
+                <p class="instrucoes__paragrafo"></p>
+                <input id="nome" class="instrucoes__entrada" type="text" placeholder="Nome">
+                <select id="dificuldade-select" class="instrucoes__select">
+                    <option value="5">5 camadas</option>
+                    <option value="4">4 camadas</option>
+                    <option value="3">3 camadas</option>
+                </select>
+                <button id="instrucoes-aceitas" class="instrucoes__botao">OK</button>
+            </div>
+            <section id="secaoTorres" class="hidden"> 
                 <!-- torre de ínicio -->
                 <section class="torre__area area--um">
                     <div id="torre__pilha--um" class="torre__area__pilha">
