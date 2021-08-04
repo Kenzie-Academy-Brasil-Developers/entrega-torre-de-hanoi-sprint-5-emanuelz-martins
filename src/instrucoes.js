@@ -8,7 +8,7 @@ function getNome() {
 }
 
 function getDificuldade() {
-    return dificuldade.value;
+    return Number(dificuldade.value);
 }
 
 botaoInstrucoes.addEventListener('click', () => {

@@ -56,6 +56,7 @@ for (let index = 0; index < torreSecao.length; index++) {
         }
     });
 }
+
 function mostrarSelecao(x) {
     let cores = ["disco1", "disco2", "disco3", "disco4", "disco5", "disco6"];
 
