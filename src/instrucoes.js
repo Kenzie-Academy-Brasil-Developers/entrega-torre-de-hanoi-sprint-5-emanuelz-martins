@@ -8,11 +8,11 @@ function getNome() {
 }
 
 function getDificuldade() {
-    return dificuldade;
+    return dificuldade.value;
 }
 
 botaoInstrucoes.addEventListener('click', () => {
     caixaInstrucoes.setAttribute('class', 'hidden');
-    getNome()
-    getDificuldade()
+    getNome();
+    getDificuldade();
 });

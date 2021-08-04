@@ -6,29 +6,24 @@ const discosDeVisualização = document.querySelectorAll(".caixa__selecao > .dis
 let modoAtualDoDisco = false;
 let discoSelecionado;
 
-criarDiscos();
-console.log(getNome);
-console.log(getDificuldade);
+criarDiscos(getDificuldade());
 
 function criarDiscos(dificuldade) {
     const imagens = ["src/imgs/paotopo.png", "src/imgs/ovo.png", "src/imgs/salada.png", "src/imgs/queijo.png", "src/imgs/carne.png", "src/imgs/paobase.png"];
     const hamburguer = []
-    if(dificuldade === 4){
-        for (let i = 4; i >= 0; i--) {
-            let numero = i+1;
-            let stringId = "disco" + numero;
-            let disco = document.createElement("div");
-            let figure = document.createElement("figure")
-            let img = document.createElement("img")
-            img.setAttribute("src", imagens[i]);
-            img.setAttribute("alt", "imagem de parte do hamburguer valor "+ i);
-            disco.id = stringId;
-            disco.setAttribute("class", "discosTorre");
-            figure.appendChild(img);
-            disco.appendChild(figure);
-            torrePilhaUm.appendChild(disco);
-
-        }
+    for (let i = dificuldade; i >= 0; i--) {
+        let numero = i + 1;
+        let stringId = "disco" + numero;
+        let disco = document.createElement("div");
+        let figure = document.createElement("figure")
+        let img = document.createElement("img")
+        img.setAttribute("src", imagens[i]);
+        img.setAttribute("alt", "imagem de parte do hamburguer valor " + i);
+        disco.id = stringId;
+        disco.setAttribute("class", "discosTorre");
+        figure.appendChild(img);
+        disco.appendChild(figure);
+        torrePilhaUm.appendChild(disco);
     }
 }
 
@@ -49,11 +44,11 @@ for (let index = 0; index < torreSecao.length; index++) {
         }
     });
 }
-function mostrarSelecao(x){
+function mostrarSelecao(x) {
     let cores = ["disco1", "disco2", "disco3", "disco4", "disco5", "disco6"];
-    
-    for(let i=0; i<cores.length; i++){
-        if(x.id === cores[i]){
+
+    for (let i = 0; i < cores.length; i++) {
+        if (x.id === cores[i]) {
             discosDeVisualização[i].id = cores[i];
         }
     }
