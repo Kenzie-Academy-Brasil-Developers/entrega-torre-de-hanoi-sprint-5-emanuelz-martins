@@ -15,7 +15,7 @@ section {
 }
 
 body{
-  background-image: url(/src/imgs/background.png);
+  background-image: url('../src/imgs/background.png');
   background-repeat: no-repeat;
   background-position: top;
   background-size: auto;
@@ -259,6 +259,18 @@ header{
 }
 
 @media (min-width: 769px) {
+  .instrucoes__entrada {
+    width: 50%;
+  }
+
+  .instrucoes__select {
+    width: 25%;
+  }
+  
+  .instrucoes__botao {
+    margin-left: 425px;
+  }
+
   #secaoTorres {
     flex-direction: row;
     justify-content: center;
