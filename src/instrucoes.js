@@ -13,6 +13,5 @@ function getDificuldade() {
 
 botaoInstrucoes.addEventListener('click', () => {
     caixaInstrucoes.setAttribute('class', 'hidden');
-    getNome();
-    getDificuldade();
+    criarDiscos(getDificuldade());
 });

@@ -3,11 +3,9 @@ const torrePilhaUm = document.getElementById("torre__pilha--um");
 const torreFinal = document.querySelector('#torre__pilha--tres');
 const torreSecao = document.querySelectorAll(".torre__area");
 const mensagem = document.querySelector('#msg');
-const discosDeVisualizacao = document.querySelectorAll("#caixa__selecao > .discosTorre");
+const discosDeVisualizacao = document.querySelectorAll("#caixa__selecao > .discosTorreSelecao");
 let modoAtualDoDisco = false;
 let discoSelecionado;
-
-criarDiscos(getDificuldade());
 
 function montarHamburguer(dificuldade, imagens){
     for (let i = dificuldade; i > 0; i--) {
@@ -25,6 +23,7 @@ function montarHamburguer(dificuldade, imagens){
         torrePilhaUm.appendChild(disco);
     }
 }
+
 function montarHamburguerSelecionado(dificuldade, imagens){
     for (let i = dificuldade; i > 0; i--) {
         let numero = i;
@@ -41,6 +40,7 @@ function montarHamburguerSelecionado(dificuldade, imagens){
         torrePilhaSelecao.appendChild(disco);
     }
 }
+
 function criarDiscos(dificuldade) {
     if(dificuldade === 4){
         const imagens = ["src/imgs/paotopo.png", "src/imgs/queijo.png", "src/imgs/carne.png", "src/imgs/paobase.png"];
@@ -48,12 +48,14 @@ function criarDiscos(dificuldade) {
         montarHamburguerSelecionado(dificuldade, imagens)
 
     }
-    else if(dificuldade === 5){
+    
+    if(dificuldade === 5){
         const imagens = ["src/imgs/paotopo.png","src/imgs/salada.png", "src/imgs/queijo.png", "src/imgs/carne.png", "src/imgs/paobase.png"];
         montarHamburguer(dificuldade, imagens)
         montarHamburguerSelecionado(dificuldade, imagens)
     }
-    else if(dificuldade === 6){
+    
+    if(dificuldade === 6){
         const imagens = ["src/imgs/paotopo.png","src/imgs/ovo.png","src/imgs/salada.png", "src/imgs/queijo.png", "src/imgs/carne.png", "src/imgs/paobase.png"];
         montarHamburguer(dificuldade, imagens)
         montarHamburguerSelecionado(dificuldade, imagens)
@@ -83,7 +85,7 @@ function mostrarSelecao(discoSelecionado) {
 
     for (let i = 0; i < cores.length; i++) {
         if (discoSelecionado.id === cores[i]) {
-            discosDeVisualizacao[i].id = cores2[i];
+            discosDeVisualizacao[i].setAttribute('id', cores2[i]);
         }
     }
 }

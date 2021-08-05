@@ -145,6 +145,7 @@ header{
   align-items: center;
   
 }
+
 #disco1Selecao, #disco2Selecao, #disco3Selecao, #disco4Selecao, #disco5Selecao, #disco6Selecao {
   filter: opacity(100%);
 }
