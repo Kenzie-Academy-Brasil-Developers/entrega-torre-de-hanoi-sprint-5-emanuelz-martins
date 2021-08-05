@@ -132,8 +132,7 @@ function mostrarMensagemVitoria() {
     const novaDiv = document.createElement('div');
 
     novaDiv.className = 'caixa-de-vitoria';
-    novaDiv.innerText = 'Parabéns!!! Você venceu!';
-    novaDiv.style.color = 'gold';
+    novaDiv.innerText = 'Ufa! Tudo certinho! Muito obrigado e tenha um bom lanche!';
     mensagem.appendChild(novaDiv);
 }
 
@@ -141,8 +140,7 @@ function mostrarMensagemErro() {
     const novoSpan = document.createElement('span');
 
     novoSpan.className = 'mensagem-erro-tamanho';
-    novoSpan.innerText = 'Não é possível sobrepor uma peça maior que a anterior!!';
-    novoSpan.style.color = 'red';
+    novoSpan.innerText = 'Por favor, não troque os ingredientes de lugar.';
     mensagem.appendChild(novoSpan);
 }
 
