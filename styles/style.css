@@ -137,9 +137,9 @@ header{
 }
 
 
-#caixa__selecao .discosTorre {
+#caixa__selecao .discosTorreSelecao {
   width:80px;
-  filter:opacity(50%);
+  /* filter:opacity(50%); */
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
@@ -152,6 +152,7 @@ header{
 #caixa__selecao .discosTorre img{
   width: 100%;
 }
+
 #secaoTorres {
   max-width: 100vw;
   margin-top: 42vh;
