@@ -143,8 +143,7 @@ function mostrarMensagemErro() {
     const novoSpan = document.createElement('span');
 
     novoSpan.className = 'mensagem-erro-tamanho';
-    novoSpan.innerText = 'Não é possível sobrepor uma peça maior que a anterior!!';
-    novoSpan.style.color = 'red';
+    novoSpan.innerText = 'Por favor, não troque os ingredientes de lugar.';
     mensagem.appendChild(novoSpan);
 }
 
