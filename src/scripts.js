@@ -1,21 +1,64 @@
+const torrePilhaSelecao = document.getElementById("torre__pilha--selecao");
 const torrePilhaUm = document.getElementById("torre__pilha--um");
 const torreFinal = document.querySelector('#torre__pilha--tres');
 const torreSecao = document.querySelectorAll(".torre__area");
 const mensagem = document.querySelector('#msg');
-const discosDeVisualização = document.querySelectorAll(".caixa__selecao > .discosTorre")
+const discosDeVisualizacao = document.querySelectorAll("#caixa__selecao > .discosTorreSelecao");
 let modoAtualDoDisco = false;
 let discoSelecionado;
 
-criarDiscos();
-
-function criarDiscos() {
-    for (let i = 4; i > 0; i--) {
+function montarHamburguer(dificuldade, imagens){
+    for (let i = dificuldade; i > 0; i--) {
         let numero = i;
         let stringId = "disco" + numero;
         let disco = document.createElement("div");
+        let figure = document.createElement("figure")
+        let img = document.createElement("img")
+        img.setAttribute("src", imagens[i-1]);
+        img.setAttribute("alt", "imagem de parte do hamburguer valor "+ i);
         disco.id = stringId;
         disco.setAttribute("class", "discosTorre");
+        figure.appendChild(img);
+        disco.appendChild(figure);
         torrePilhaUm.appendChild(disco);
+    }
+}
+
+function montarHamburguerSelecionado(dificuldade, imagens){
+    for (let i = dificuldade; i > 0; i--) {
+        let numero = i;
+        let stringId = "discoSelecionado" + numero;
+        let disco = document.createElement("div");
+        let figure = document.createElement("figure")
+        let img = document.createElement("img")
+        img.setAttribute("src", imagens[i-1]);
+        img.setAttribute("alt", "imagem de parte do hamburguer valor "+ i);
+        disco.id = stringId;
+        disco.setAttribute("class", "discosTorre");
+        figure.appendChild(img);
+        disco.appendChild(figure);
+        torrePilhaSelecao.appendChild(disco);
+    }
+}
+
+function criarDiscos(dificuldade) {
+    if(dificuldade === 4){
+        const imagens = ["src/imgs/paotopo.png", "src/imgs/queijo.png", "src/imgs/carne.png", "src/imgs/paobase.png"];
+        montarHamburguer(dificuldade, imagens)
+        montarHamburguerSelecionado(dificuldade, imagens)
+
+    }
+    
+    if(dificuldade === 5){
+        const imagens = ["src/imgs/paotopo.png","src/imgs/salada.png", "src/imgs/queijo.png", "src/imgs/carne.png", "src/imgs/paobase.png"];
+        montarHamburguer(dificuldade, imagens)
+        montarHamburguerSelecionado(dificuldade, imagens)
+    }
+    
+    if(dificuldade === 6){
+        const imagens = ["src/imgs/paotopo.png","src/imgs/ovo.png","src/imgs/salada.png", "src/imgs/queijo.png", "src/imgs/carne.png", "src/imgs/paobase.png"];
+        montarHamburguer(dificuldade, imagens)
+        montarHamburguerSelecionado(dificuldade, imagens)
     }
 }
 
@@ -27,23 +70,25 @@ for (let index = 0; index < torreSecao.length; index++) {
         } else {
             colocarDisco(evento);
         }
-        
-        if(torreFinal.childElementCount === 5) {
-            mostrarMensagemVitoria();
+
+        if (torreFinal.childElementCount === 5) {
+            mostrarMensagemVitoria(getNome(nomeJogador));
+            setTimeout(() => {
+                mensagem.innerText = '';
+            }, 10000);
         }
     });
-
 }
-function mostrarSelecao(x){
-    let cores = ["disco1", "disco2", "disco3", "disco4"];
-    
-    for(let i=0; i<cores.length; i++){
-        if(x.id === cores[i]){
-            discosDeVisualização[i].id = cores[i];
+function mostrarSelecao(discoSelecionado) {
+    let cores = ["disco1", "disco2", "disco3", "disco4", "disco5", "disco6"];
+    let cores2 = ["disco1Selecao", "disco2Selecao", "disco3Selecao", "disco4Selecao", "disco5Selecao", "disco6Selecao"];
+
+    for (let i = 0; i < discosDeVisualizacao.childElementCount; i++) {
+        if (discoSelecionado.id === cores[i]) {
+            discosDeVisualizacao[i].style.setProperty('filter', 'opacity: 100%');
         }
     }
 }
-
 
 function selecionaDisco(evento) {
     let torreAreaPilha = evento.currentTarget.childNodes[1];
@@ -56,15 +101,15 @@ function selecionaDisco(evento) {
         mostrarSelecao(discoSelecionado);
     }
 }
-function tirarSelecao(x){
-    for(let i=0; i<discosDeVisualização.length;i++) {
-        discosDeVisualização[i].removeAttribute("id");
+
+function tirarSelecao(x) {
+    for (let i = 0; i < discosDeVisualizacao.length; i++) {
+        discosDeVisualizacao[i].removeAttribute("id");
     }
 }
 
-
 function colocarDisco(evento) {
-    let torreAreaPilha = evento.currentTarget.childNodes[1]
+    let torreAreaPilha = evento.currentTarget.childNodes[1];
     let discoPresente = torreAreaPilha.lastChild;
 
     if (torreAreaPilha.childElementCount === 1) {
@@ -84,12 +129,13 @@ function colocarDisco(evento) {
         }
     }
 }
-
-function mostrarMensagemVitoria() {
+// INCLUIR NOME DO INPUT
+function mostrarMensagemVitoria(nome) {
     const novaDiv = document.createElement('div');
 
     novaDiv.className = 'caixa-de-vitoria';
-    novaDiv.innerText = 'Parabéns!!! Você venceu!';
+    novaDiv.innerText = `Parabéns ${nome}!!! Você venceu!`;
+    novaDiv.style.color = 'gold';
     mensagem.appendChild(novaDiv);
 }
 
@@ -97,8 +143,7 @@ function mostrarMensagemErro() {
     const novoSpan = document.createElement('span');
 
     novoSpan.className = 'mensagem-erro-tamanho';
-    novoSpan.innerText = 'Não é possível sobrepor uma peça maior que a anterior!!';
-    novoSpan.style.color = 'red';
+    novoSpan.innerText = 'Por favor, não troque os ingredientes de lugar.';
     mensagem.appendChild(novoSpan);
 }
 
