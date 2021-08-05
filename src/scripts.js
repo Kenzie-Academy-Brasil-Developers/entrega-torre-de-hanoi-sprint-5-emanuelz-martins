@@ -134,7 +134,7 @@ function mostrarMensagemVitoria(nome) {
     const novaDiv = document.createElement('div');
 
     novaDiv.className = 'caixa-de-vitoria';
-    novaDiv.innerText = `Parabéns ${nome}!!! Você venceu!`;
+    novaDiv.innerText = `Ufa!Tudo certo. Obrigado, ${nome}!!! Tenha um bom lanche e volte sempre!`;
     novaDiv.style.color = 'gold';
     mensagem.appendChild(novaDiv);
 }
