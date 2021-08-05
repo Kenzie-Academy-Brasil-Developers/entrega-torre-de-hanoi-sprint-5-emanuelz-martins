@@ -25,6 +25,10 @@ body{
   display: none;
 }
 
+.show {
+  display: block;
+}
+
 .instrucoes {
   display: flex;
   flex-direction: column;
@@ -76,7 +80,7 @@ body{
 }
 
 
-#caixa__selecao .discosTorreSelecao {
+#caixa__selecao .discosTorre {
   width:80px;
   filter:opacity(30%);
   display: flex;
@@ -84,7 +88,6 @@ body{
   align-items: center;
   
 }
-
 #disco1Selecao, #disco2Selecao, #disco3Selecao, #disco4Selecao, #disco5Selecao, #disco6Selecao {
   filter: opacity(100%);
 }

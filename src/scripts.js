@@ -72,7 +72,7 @@ for (let index = 0; index < torreSecao.length; index++) {
         }
 
         if (torreFinal.childElementCount === 5) {
-            mostrarMensagemVitoria();
+            mostrarMensagemVitoria(getNome());
             setTimeout(() => {
                 mensagem.innerText = '';
             }, 10000);
@@ -83,9 +83,9 @@ function mostrarSelecao(discoSelecionado) {
     let cores = ["disco1", "disco2", "disco3", "disco4", "disco5", "disco6"];
     let cores2 = ["disco1Selecao", "disco2Selecao", "disco3Selecao", "disco4Selecao", "disco5Selecao", "disco6Selecao"];
 
-    for (let i = 0; i < cores.length; i++) {
+    for (let i = 0; i < discosDeVisualizacao.childElementCount; i++) {
         if (discoSelecionado.id === cores[i]) {
-            discosDeVisualizacao[i].setAttribute('id', cores2[i]);
+            discosDeVisualizacao[i].style.setProperty('filter', 'opacity: 100%');
         }
     }
 }
@@ -130,11 +130,11 @@ function colocarDisco(evento) {
     }
 }
 // INCLUIR NOME DO INPUT
-function mostrarMensagemVitoria() {
+function mostrarMensagemVitoria(nome) {
     const novaDiv = document.createElement('div');
 
     novaDiv.className = 'caixa-de-vitoria';
-    novaDiv.innerText = 'Parabéns!!! Você venceu!';
+    novaDiv.innerText = `Parabéns ${nome}!!! Você venceu!`;
     novaDiv.style.color = 'gold';
     mensagem.appendChild(novaDiv);
 }
